@@ -1,0 +1,24 @@
+.label{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.addBtn{
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    background-color: #6916ee;
+    color: white;
+    border: 1px solid ;
+}
+
+.form{
+    margin-top: 20px;
+    margin-left: 30vh;
+    max-width: auto;
+}

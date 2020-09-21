@@ -1,0 +1,23 @@
+.th{
+    padding-left: 10vh;
+
+}
+.table{
+    margin-top: 20px;
+}
+td{
+    padding-left: 10vh;
+}
+
+.removeBtn{
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    background-color: #6916ee;
+    color: white;
+    border: 1px solid ;
+}
