@@ -4,7 +4,6 @@
 
 .container{
   height: 750px;
-  background-color: thistle;
   display: flex;
   flex-direction: row;
 }

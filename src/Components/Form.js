@@ -21,35 +21,35 @@ class Form extends Component {
             [name] : value
         });
     }
-
+/*
     onFormSubmit = (event) => {
         event.preventDefault();
         
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
-
+*/
     render() {
-        const { name, surname, job } = this.state; 
+        const { name, surname, job } = this.state;
 
         return (
             <form className="form" onSubmit={this.onFormSubmit}>
                 <label className = 'label' for="name">Name</label>
-                <input 
+                <input required
                     type="text" 
                     name="name" 
                     id="name"
                     value={name} 
                     onChange={this.handleChange} />
                      <label className = 'label' for="surname">Surname</label>
-                <input 
+                <input required
                     type="text" 
                     name="surname" 
                     id="surname"
                     value={surname} 
                     onChange={this.handleChange} />
                 <label className = 'label' for="job">Job</label>
-                <input 
+                <input required
                     type="text" 
                     name="job" 
                     id="job"
