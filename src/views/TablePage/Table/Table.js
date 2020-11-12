@@ -18,29 +18,63 @@ const TableHeader = () => {
 
 class Table extends React.Component {
 
+    maxId = 2;
+
     state = {
-        dataUsers: [
-            { id: 1, firstName: 'Polina', lastName: 'Raguilo', email: 'polina2020@mail.ru' },
-            { id: 2, firstName: 'Ivan', lastName: 'Ivanov', email: 'Ivan2020@mail.ru' }
+        UsersInf: [
+            { id: 1, firstName: 'Polina', lastName: 'Raguilo', job: 'manager' },
+            { id: 2, firstName: 'Ivan', lastName: 'Lushakov', job: 'QA' }
         ]
     }
 
+    deleteUser = (id) => {
+        this.setState(({ UsersInf }) => {
+            let idDel = UsersInf.findIndex(elem => elem.id === id);
+
+            let beforeDel = UsersInf.slice(0, idDel);
+            let afterDel = UsersInf.slice(idDel + 1);
+
+            let newArr = [...beforeDel, ...afterDel];
+
+            return {
+                UsersInf: newArr
+            }
+        }) 
+    }
+
+    addNewUser = (firstName, lastName, job) => {
+        this.setState(({UsersInf}) => {
+            let newItem = [
+                ...UsersInf,
+               { id: ++this.maxId, 
+                firstName: firstName, 
+                lastName: lastName, 
+                job: job
+               }
+            ]
+            return{
+                UsersInf: newItem
+            }
+        })
+    }
+
+
     render() {
 
-        const rows = this.state.dataUsers.map((item) => {
-            const {id, firstName, lastName, email} = item;
+        const rows = this.state.UsersInf.map((item) => {
+            const {id, firstName, lastName, job} = item;
             return (
                 <tr key={id}>
                     <td>{firstName}</td>
                     <td>{lastName}</td>
-                    <td>{email}</td>
-                    <td><button className="removeBtn" >Удалить</button></td>
+                    <td>{job}</td>
+                    <td><button className="removeBtn" onClick={()=>this.deleteUser(id)}>Удалить</button></td>
                 </tr>
             );
         });
         return (
             <React.Fragment>
-                <Form/>
+                <Form addNewUser={this.addNewUser}/>
             <table className='table'>
                 <TableHeader />
                 <tbody>

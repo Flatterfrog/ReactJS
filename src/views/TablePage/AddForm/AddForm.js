@@ -2,17 +2,14 @@ import React, {Component} from 'react';
 import '../AddForm/Form.css';
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
+    
         
-        this.initialState = {
+        state = {
             name: '',
             surname: '',
             job: ''
         };
 
-        this.state = this.initialState;
-    }
 
     handleChange = event => {
         const { name, value } = event.target;
@@ -22,15 +19,14 @@ class Form extends Component {
         });
     }
 
-    onFormSubmit = (event) => {
-        event.preventDefault();
-        
-        this.props.handleSubmit(this.state);
-        this.setState(this.initialState);
+    onFormSubmit = (e) => {
+        const { name, surname, job } = this.state;
+        e.preventDefault();
+        this.props.addNewUser(name, surname, job)
     }
 
     render() {
-        const { name, surname, job } = this.state;
+        
 
         return (
             <form className="form" onSubmit={this.onFormSubmit}>
@@ -39,21 +35,18 @@ class Form extends Component {
                     type="text" 
                     name="name" 
                     id="name"
-                    value={name} 
                     onChange={this.handleChange} />
                      <label className = 'label' for="surname">Surname</label>
                 <input required
                     type="text" 
                     name="surname" 
                     id="surname"
-                    value={surname} 
                     onChange={this.handleChange} />
                 <label className = 'label' for="job">Job</label>
                 <input required
                     type="text" 
                     name="job" 
                     id="job"
-                    value={job} 
                     onChange={this.handleChange} />
                 <button className ="addBtn" type="submit">
                     Добавить
