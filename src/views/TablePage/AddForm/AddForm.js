@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../Form.css'
+import '../AddForm/Form.css';
 
 class Form extends Component {
     constructor(props) {
@@ -21,14 +21,14 @@ class Form extends Component {
             [name] : value
         });
     }
-/*
+
     onFormSubmit = (event) => {
         event.preventDefault();
         
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
-*/
+
     render() {
         const { name, surname, job } = this.state;
 

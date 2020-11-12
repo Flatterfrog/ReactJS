@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Table from './Components/Table';
-import Form from './Components/Form';
 import './App.css'
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom'
-import  AutorizationForm from '../src/views/auth/auth'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import  AutorizationForm from '../../views/auth/auth'
+import Form from '../../views/TablePage/AddForm/AddForm';
+import Table from '../../views/TablePage/Table/Table';
 
 
 
@@ -29,21 +29,15 @@ class App extends Component {
     
 
     render() {
-        const { characters } = this.state;
         
         return (
-            <BrowserRouter>
+            <Router>
             <Switch>
                 <Route exact path="/" component={AutorizationForm}/>
-                <Route path="/users" component={Form}/>
+                <Route path="/users" component={Table}/>
                 <Route render={() => <h2>OOOPS</h2>}/>
-              <Table 
-                   characterData={characters}
-                    removeCharacter={this.removeCharacter}
-                />
-               <Form handleSubmit={this.handleSubmit} />
                 </Switch>
-            </BrowserRouter>
+            </Router>
             
         );
     }
