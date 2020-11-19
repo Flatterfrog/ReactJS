@@ -1,6 +1,9 @@
 import React from 'react';
 import Form from '../AddForm/AddForm';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import '../Table/Table.css';
+import  '../Table/style.css';
 
 const TableHeader = () => { 
     return (
@@ -18,11 +21,12 @@ const TableHeader = () => {
 
 class Table extends React.Component {
 
+
     maxId = 2;
 
     state = {
         UsersInf: [
-            { id: 1, firstName: 'Polina', lastName: 'Raguilo', job: 'manager' },
+            { id: 1, firstName: 'Viktor', lastName: 'Polyakov', job: 'Designer' },
             { id: 2, firstName: 'Ivan', lastName: 'Lushakov', job: 'QA' }
         ]
     }
@@ -81,10 +85,22 @@ class Table extends React.Component {
                     {rows}
                 </tbody>
             </table>
+            <Carousel className="carous">
+                <div>
+                    <img src="png/1.png" />
+                </div>
+                <div>
+                    <img src="png/2.png" />
+                </div>
+                <div>
+                    <img src="png/3.png" />
+                </div>
+            </Carousel>
+
             </React.Fragment>
         );
     }
-}
+}   
 
 
 export default Table;

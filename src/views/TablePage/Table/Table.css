@@ -21,3 +21,10 @@ td{
     color: white;
     border: 1px solid ;
 }
+
+
+.carous{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
