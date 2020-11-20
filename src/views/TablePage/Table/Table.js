@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../AddForm/AddForm';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import '../Table/Table.css';
 import  '../Table/style.css';
@@ -86,6 +86,33 @@ class Table extends React.Component {
                 </tbody>
             </table>
             <Carousel className="carous">
+                <div>
+                    <img src="png/1.png" />
+                </div>
+                <div>
+                    <img src="png/2.png" />
+                </div>
+                <div>
+                    <img src="png/3.png" />
+                </div>
+                <div>
+                    <img src="png/1.png" />
+                </div>
+                <div>
+                    <img src="png/2.png" />
+                </div>
+                <div>
+                    <img src="png/3.png" />
+                </div>
+                <div>
+                    <img src="png/1.png" />
+                </div>
+                <div>
+                    <img src="png/2.png" />
+                </div>
+                <div>
+                    <img src="png/3.png" />
+                </div>
                 <div>
                     <img src="png/1.png" />
                 </div>
