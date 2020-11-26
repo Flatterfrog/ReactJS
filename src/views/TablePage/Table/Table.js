@@ -4,6 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import '../Table/Table.css';
 import  '../Table/style.css';
+import { connect } from 'react-redux';
+import { removeCharacter } from '../../../redux/action';
 
 const TableHeader = () => { 
     return (
@@ -129,5 +131,17 @@ class Table extends React.Component {
     }
 }   
 
+const mapStateToProps = (state) => {
+    return {
+      data: state.tableReducer
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      deleteUser: (id) => dispatch(removeCharacter(id)),
+    }
+  }
+  
 
-export default Table;
+export default connect(mapStateToProps, mapDispatchToProps)(Table);;
